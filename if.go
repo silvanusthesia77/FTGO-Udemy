@@ -4,12 +4,20 @@ import "fmt"
 
 func main() {
 
-	as := 9
+	name := "jokowi"
 
-	if as > 7 && as < 4 {
-		fmt.Println("Balik lain waktu")
+	if name == "luiz" {
+		fmt.Println("Welcome Luiz Arthur")
+	} else if name == "joko" {
+		fmt.Println("Selamat Datang Joko")
 	} else {
-		fmt.Println("Silahkan Masuk")
+		fmt.Println("Halo !! boleh kenalan , ")
 	}
-
+	if length := len(name); length > 5 {
+		fmt.Println("Lebih Besar dari : 5")
+	} else {
+		fmt.Println("Kurang Dari : 5")
+	}
 }
+
+// switch expression
