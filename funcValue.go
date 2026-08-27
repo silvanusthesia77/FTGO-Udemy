@@ -9,3 +9,5 @@ func main() {
 func terurName(names string) string {
 	return "Hi, ... " + names
 }
+
+// function as parameter
