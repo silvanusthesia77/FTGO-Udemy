@@ -2,19 +2,21 @@ package main
 
 import "fmt"
 
-func sayHelloFilter(name string, filter func(string) string) {
-	spanName := filter(name)
-	fmt.Println("Hi,.........", spanName)
+func sayHelloFiltter(name string, filter func(string) string) {
+	filterName := filter(name)
+	fmt.Println("Hiii", filterName)
 }
-func spamFillter(name string) string {
+func spamFlter(name string) string {
 	if name == "Anjing" {
-		return (".........")
+		return ".........."
 	} else {
 		return name
-
 	}
 }
+
 func main() {
-	filtter := spamFillter
-	sayHelloFilter("Luizzz", filtter)
+	hasil := spamFlter
+	sayHelloFiltter("Biba", hasil)
+
+	sayHelloFiltter("Anjing", spamFlter)
 }
