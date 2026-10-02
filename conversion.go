@@ -16,6 +16,13 @@ func main() {
 	fmt.Println(name)
 	fmt.Println(e)
 	fmt.Println(string)
+
+	var data1 int32 = 32768
+	fmt.Println(data1)
+	var data2 int64 = int64(data1)
+	fmt.Println(data2)
+	var data3 int8 = int8(data1)
+	fmt.Println(data3)
 }
 
 //Konversi tipe data 14
