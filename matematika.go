@@ -9,6 +9,14 @@ func main() {
 	var e = 3
 	var c = a + b - d*e
 	fmt.Println(c)
+
+	var i = 10
+	i += 10
+	fmt.Println(i)
+	i++
+	fmt.Println(i)
+	i--
+	fmt.Println(i)
 }
 
 //16 Operasi Matematika
