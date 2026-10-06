@@ -1,15 +1,10 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	parameter("Bibba", 20)
-	parameter("Bobby", 23)
+	det("thobiaz", "Solossa")
 }
-func parameter(name string, age int) {
-	fmt.Println("Hii,", name, age)
+func det(firstName, lastName string) {
+	fmt.Println("Hi, ", firstName, lastName)
 }
-
-//page 28 function return value
