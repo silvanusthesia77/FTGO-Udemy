@@ -2,25 +2,22 @@ package main
 
 import "fmt"
 
-type FillterKataKotor func(name string) bool
+type FilterBlock func(name string) bool
 
-func fiterKata(name string, filtter FillterKataKotor) {
-	if name == "Anjing" {
-		fmt.Println("Have Blocked ", name)
+func kataKotor(name string, fillter FilterBlock) {
+	if fillter(name) {
+		fmt.Println("Have Blocked", name)
 	} else {
-		fmt.Println("Welcome ", name)
+		fmt.Println("Welcome", name)
 	}
 }
-
 func main() {
-	fiterKata("Wanus", func(name string) bool {
-		return name == "Anjing"
-	})
-
 	fill := func(name string) bool {
 		return name == "Anjing"
 	}
-	fiterKata("wanus", fill)
-}
+	kataKotor("thoby", fill)
 
-//35
+	kataKotor("Anjing", func(name string) bool {
+		return name == "Anjing"
+	})
+}
