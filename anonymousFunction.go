@@ -2,22 +2,22 @@ package main
 
 import "fmt"
 
-type FilterBlock func(name string) bool
+type Filtter func(name string) bool
 
-func kataKotor(name string, fillter FilterBlock) {
-	if fillter(name) {
-		fmt.Println("Have Blocked", name)
+func filterfunck(name string, filtter Filtter) {
+	if filtter(name) {
+		fmt.Println("Have Blocked ", name)
 	} else {
-		fmt.Println("Welcome", name)
+		fmt.Println("Welcome ", name)
 	}
 }
+
 func main() {
-	fill := func(name string) bool {
+	blocker := func(name string) bool {
 		return name == "Anjing"
 	}
-	kataKotor("thoby", fill)
-
-	kataKotor("Anjing", func(name string) bool {
+	filterfunck("Thobby", blocker)
+	filterfunck("Bibba", func(name string) bool {
 		return name == "Anjing"
 	})
 }
