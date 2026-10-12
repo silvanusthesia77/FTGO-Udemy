@@ -7,25 +7,25 @@ type Customer struct {
 	age          int
 }
 
-func main() {
-	var custmer Customer
-	custmer.name = "Thoby"
-	custmer.adress = "Km 17"
-	custmer.age = 20
-
-	fmt.Println(custmer)
-
-	pelanggang := Customer{
-		name:   "Wanus",
-		adress: "Malibela",
-		age:    22,
-	}
-	fmt.Println(pelanggang)
-
-	budi := Customer{"Budi", "indonesia", 22}
-	fmt.Println(budi)
-
-	fmt.Println(Customer{"junior", "Japrax", 22})
+func (pelanggang Customer) sayHello(name string) {
+	fmt.Println(name, "Hi, My name is :", pelanggang.name, "I am :", pelanggang.age, "My Adress is ", pelanggang.adress)
 }
 
-//  pages 40
+func main() {
+	var customer Customer
+	customer.name = "Bibba"
+	customer.adress = "Pelangi"
+	customer.age = 20
+	fmt.Println(customer)
+
+	var luiz = Customer{
+		name:   "Luiz",
+		adress: "Kilo 17",
+		age:    22,
+	}
+	fmt.Println(luiz)
+	fmt.Println(Customer{"thobby", "Pelangi", 22})
+	luiz.sayHello("Andi")
+}
+
+//  41
