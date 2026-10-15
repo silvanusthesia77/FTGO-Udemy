@@ -2,22 +2,21 @@ package main
 
 import "fmt"
 
-func sayHellos(name string) map[string]string {
+func newMap(name string) map[string]string {
 	if name == "" {
 		return nil
 	} else {
 		return map[string]string{
-			"Nama": name,
+			"name": name,
 		}
 	}
 }
+
 func main() {
-	data := sayHellos("")
+	data := newMap("wanus")
 	if data == nil {
 		fmt.Println("Data Masih Kosong")
 	} else {
-		fmt.Println(data["Nama"])
+		fmt.Println(data)
 	}
 }
-
-//  page 43 nil
