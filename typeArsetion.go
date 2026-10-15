@@ -2,25 +2,24 @@ package main
 
 import "fmt"
 
-func pack() any {
+func roadMap() any {
 	return true
 }
 func main() {
-	pacc := pack()
+	hasil := roadMap()
+	switch hasillroad := hasil.(type) {
+	case string:
+		fmt.Println("Hasil Dari String :", hasillroad)
+	case int:
+		fmt.Println("Hasil Dari Int :", hasillroad)
+	default:
+		fmt.Println("Unkwon", hasillroad)
+	}
 	// resault := pacc.(string)
 	// fmt.Println(resault)
 	// Dibawah adalah cara yang salah
 	// resaultt := pacc.(int)
 	// fmt.Println(resaultt)
-
-	switch resault := pacc.(type) {
-	case string:
-		fmt.Println("Hasil String ", resault)
-	case int:
-		fmt.Println("Int Hasilnya :", resault)
-	default:
-		fmt.Println("Unknown", resault)
-	}
 }
 
 // pages 45
