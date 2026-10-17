@@ -3,10 +3,15 @@ package main
 import "fmt"
 
 func roadMap() any {
-	return true
+	return 1080
 }
 func main() {
 	hasil := roadMap()
+	// resault := pacc.(string)
+	// fmt.Println(resault)
+	// Dibawah adalah cara yang salah
+	// resaultt := pacc.(int)
+	// fmt.Println(resaultt)
 	switch hasillroad := hasil.(type) {
 	case string:
 		fmt.Println("Hasil Dari String :", hasillroad)
@@ -15,11 +20,6 @@ func main() {
 	default:
 		fmt.Println("Unkwon", hasillroad)
 	}
-	// resault := pacc.(string)
-	// fmt.Println(resault)
-	// Dibawah adalah cara yang salah
-	// resaultt := pacc.(int)
-	// fmt.Println(resaultt)
 }
 
 // pages 45
