@@ -8,11 +8,14 @@ type students struct {
 	adress string
 }
 
-func main() {
-	var biodata students = students{"thoby", 20, "jln sagu"}
-	var biodata1 *students = &biodata
-	biodata1.name = "Biibbaa"
+func changess(stud *students) {
+	stud.name = "Thobby"
+	stud.age = 20
+	stud.adress = "JLN.."
+}
 
-	fmt.Println(biodata)
-	fmt.Println(biodata1)
+func main() {
+	var studdt students = students{}
+	changess(&studdt)
+	fmt.Println(studdt)
 }
