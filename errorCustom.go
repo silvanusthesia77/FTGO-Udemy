@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-type ValidationError struct {
+type ValidasiError struct {
 	Message string
 }
 
-func (v *ValidationError) Error() string {
+func (v *ValidasiError) Error() string {
 	return v.Message
 }
 
@@ -17,24 +17,38 @@ type NotFoundError struct {
 func (n *NotFoundError) Error() string {
 	return n.Message
 }
+
 func SaveData(id string, data any) error {
 	if id == "" {
-		return &ValidationError{Message: "Validasi Error"}
-	}
-	if id != "EKo" {
+		return &ValidasiError{Message: "Validasi Error"}
+	} else if id != "Andy" {
 		return &NotFoundError{Message: "Not Found Error"}
+	} else {
+		return nil
 	}
-	return nil
+
 }
 func main() {
-	err := SaveData("", nil)
-	if ValidationErr, ok := err.(*ValidationError); ok {
-		fmt.Println(ValidationErr.Message)
-	} else if NotFoundErr, ok := err.(*NotFoundError); ok {
-		fmt.Println(NotFoundErr.Message)
+	err := SaveData("And", nil)
+	if err != nil {
+		// if ValidasiErr, ok := err.(*ValidasiError); ok {
+		// 	fmt.Println(ValidasiErr.Error())
+		// } else if NotFoundErr, ok := err.(*NotFoundError); ok {
+		// 	fmt.Println(NotFoundErr.Error())
+		// } else {
+		// 	fmt.Println("Hasil Akhir :", err.Error())
+		// }
+		switch finalError := err.(type) {
+		case *ValidasiError:
+			fmt.Println(finalError.Error())
+		case *NotFoundError:
+			fmt.Println(finalError.Error())
+		default:
+			fmt.Println(finalError.Error())
+		}
 	} else {
-		fmt.Println(err.Error())
+		fmt.Println("Suksess")
 	}
 }
 
-// 54
+// 55 Materi selanjutnya
