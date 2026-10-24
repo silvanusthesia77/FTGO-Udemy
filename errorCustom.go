@@ -1,10 +1,12 @@
 package main
 
+import "fmt"
+
 type ValidationError struct {
 	Message string
 }
 
-func (v ValidationError) Error() string {
+func (v *ValidationError) Error() string {
 	return v.Message
 }
 
@@ -12,17 +14,26 @@ type NotFoundError struct {
 	Message string
 }
 
-func (n NotFoundError) Error() string {
+func (n *NotFoundError) Error() string {
 	return n.Message
 }
-func ValidasiData(id string, data any) error {
+func SaveData(id string, data any) error {
 	if id == "" {
-		return &ValidationError{Message: "Data Error"}
+		return &ValidationError{Message: "Validasi Error"}
 	}
-	if id != "Budi" {
-		return &NotFoundError{Message: "Not Found"}
+	if id != "EKo" {
+		return &NotFoundError{Message: "Not Found Error"}
+	}
+	return nil
+}
+func main() {
+	err := SaveData("", nil)
+	if ValidationErr, ok := err.(*ValidationError); ok {
+		fmt.Println(ValidationErr.Message)
+	} else if NotFoundErr, ok := err.(*NotFoundError); ok {
+		fmt.Println(NotFoundErr.Message)
 	} else {
-		return nil
+		fmt.Println(err.Error())
 	}
 }
 
